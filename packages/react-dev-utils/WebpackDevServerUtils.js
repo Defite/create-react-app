@@ -68,11 +68,13 @@ function prepareUrls(protocol, host, port) {
   }
   const localUrlForTerminal = prettyPrintUrl(prettyHost);
   const localUrlForBrowser = formatUrl(prettyHost);
+  const stackOverflowUrl = 'https://stackoverflow.com/questions/tagged/typescript+reactjs';
   return {
     lanUrlForConfig,
     lanUrlForTerminal,
     localUrlForTerminal,
     localUrlForBrowser,
+    stackOverflowUrl,
   };
 }
 
@@ -87,6 +89,9 @@ function printInstructions(appName, urls, useYarn) {
     );
     console.log(
       `  ${chalk.bold('On Your Network:')}  ${urls.lanUrlForTerminal}`
+    );
+    console.log(
+      `  ${chalk.bold('StackOverflow:')}  ${urls.stackOverflowUrl}`
     );
   } else {
     console.log(`  ${urls.localUrlForTerminal}`);
